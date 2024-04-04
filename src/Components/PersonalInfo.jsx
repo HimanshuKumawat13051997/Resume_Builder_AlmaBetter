@@ -1,5 +1,8 @@
 import { Avatar, Button, Grid, TextField, Typography } from "@mui/material";
 import { styled } from "@mui/system";
+import { useDispatch, useSelector } from "react-redux";
+import { handleImageSave } from "../Redux/Slice/ImageSave";
+import { useEffect } from "react";
 
 const VisuallyHiddenInput = styled("input")({
   clip: "rect(0 0 0 0)",
@@ -14,9 +17,20 @@ const VisuallyHiddenInput = styled("input")({
 });
 
 export function PersonalInfo({ pass }) {
+  const dispatch = useDispatch();
+  const file = useSelector((state) => state.imagePath);
   const letClick = (event) => {
-    const path = URL.createObjectURL(event.target.files[0]);
-    pass.handleImageUpload(path);
+    event.preventDefault();
+    const { files } = event.target;
+    const file = files[0]; // Get the first file from the input
+    const reader = new FileReader();
+    // Define what happens when the file is read
+    reader.onload = function (e) {
+      const localImageUrl = e.target.result;
+      dispatch(handleImageSave(localImageUrl));
+    };
+    // Start reading the file as a data URL
+    reader.readAsDataURL(file);
   };
 
   return (
@@ -28,7 +42,7 @@ export function PersonalInfo({ pass }) {
           <Grid item xs={12}>
             <Avatar
               alt="Remy Sharp"
-              src={pass.imagePath}
+              src={file}
               sx={{ width: 150, height: 150 }}
             />
           </Grid>
@@ -41,7 +55,11 @@ export function PersonalInfo({ pass }) {
                 fontFamily: `"Poppins", sans-serif`,
               }}
             >
-              <VisuallyHiddenInput type="file" onChange={letClick} />
+              <VisuallyHiddenInput
+                accept="image/png, image/jpeg"
+                type="file"
+                onChange={letClick}
+              />
               Upload Image
             </Button>
           </Grid>

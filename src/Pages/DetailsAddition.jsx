@@ -20,13 +20,10 @@ export function DetailsAddition() {
   const visbility = useSelector((state) => state.visbile);
   const ID = useSelector((state) => state.IDselector);
   const [formData, setFormData] = useState(null);
-  const [imagePath, setImagePath] = useState("");
+  const file = useSelector((state) => state.imagePath);
   const dispatch = useDispatch();
 
   //code for handle image upload
-  const handleImageUpload = (path) => {
-    setImagePath(path);
-  };
 
   const {
     register,
@@ -40,7 +37,7 @@ export function DetailsAddition() {
   const onSubmit = (data, event) => {
     const updatedFormData = {
       ...data,
-      imagePath: imagePath,
+      imagePath: file,
       template_id: ID,
     };
     setFormData(updatedFormData);
@@ -60,8 +57,6 @@ export function DetailsAddition() {
         errors,
         setValue,
         getValues,
-        handleImageUpload,
-        imagePath,
       }}
     />,
     <WorkExperience

@@ -8,6 +8,7 @@ import FileName from "./Slice/FileName";
 import MyResumeData from "./Slice/HandleMyResume";
 import ModelHandler from "./Slice/ModalSlice";
 import PreviewVisiblity from "./Slice/PreviewVisibility";
+import ImageSave from "./Slice/ImageSave";
 
 export const Store = configureStore({
   reducer: {
@@ -20,6 +21,7 @@ export const Store = configureStore({
     myresumedata: MyResumeData,
     Modalhandler: ModelHandler,
     visbile: PreviewVisiblity,
+    imagePath: ImageSave,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
