@@ -1,38 +1,283 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.page {
+  background: white;
+  width: 21cm;
+  height: 29.7cm;
+  flex-direction: column;
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media print {
+  .page[size="A4"] {
+    margin: 0;
+    box-shadow: 0;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.page .header {
+  height: 250px;
+  display: flex;
+  align-items: center;
+}
+.page .header .iam {
+  width: 100%;
+  height: 180px;
+  background-color: rgb(230, 229, 229);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.page .header .iam .profile-infor {
   display: flex;
   flex-direction: column;
+  gap: 15px;
+  letter-spacing: 8px;
+}
+
+.page .header .iam img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  position: relative;
+  top: 60px;
+}
+
+.page .bodypart {
+  align-self: center;
+  margin-top: 30px;
+  height: 820px;
+  width: 85%;
+  display: grid;
+  grid-template-columns: 1.2fr 2fr;
+  grid-template-rows: 0.8fr 1.5fr 1.5fr;
+  grid-template-areas:
+    "maindetails profiledetails"
+    "skills Experience"
+    "education Experience";
+}
+
+.maindetails {
+  border-bottom: 2px solid;
+  grid-area: maindetails;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.profiledetails {
+  grid-area: profiledetails;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  padding-left: 30px;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skills {
+  border-bottom: 2px solid;
+  grid-area: skills;
+  display: flex;
+  flex-direction: column;
+  padding-top: 35px;
+  gap: 40px;
+}
+
+.Experience {
+  border-left: 2px solid;
+  grid-area: Experience;
+  padding-left: 30px;
+  padding-top: 35px;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.education {
+  grid-area: education;
+  display: flex;
+  flex-direction: column;
+  padding-top: 35px;
+  gap: 40px;
+}
+
+.maindetail {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 95%;
+}
+
+.profiledetails h1 {
+  letter-spacing: 5px;
+}
+
+.skills h1 {
+  letter-spacing: 5px;
+}
+.skills ul {
+  padding-left: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.educationdata {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.education h1 {
+  letter-spacing: 5px;
+}
+
+.educationdata span:nth-child(1) {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.educationdata span:nth-child(2) {
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.educationdata span:nth-child(3) {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.Experience h1 {
+  letter-spacing: 5px;
+}
+
+.expdetails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.expdetails ul {
+  padding-left: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.expdetails span:nth-child(1) {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.expdetails span:nth-child(2) {
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.expdetails span:nth-child(3) {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.bla {
+  border: 2px solid red;
+  transform: scale(0.5);
+  width: 810px;
+}
+
+.maintemplatestructure {
+  display: flex;
+  flex-direction: column;
+}
+
+.templatestructure {
+  width: 320px;
+  height: 450px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border: 2px solid green;
 }
 
-.App-link {
-  color: #61dafb;
+.the {
+  scale: 0.45;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.tohover {
+  width: 800px;
+  height: 1125px;
+  position: absolute;
+  top: 0px;
+  background-color: rgba(0, 0, 0, 0.46);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.tohover:hover {
+  opacity: 1;
+}
+
+.detailersofpage {
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 80px;
+}
+
+.fullcover {
+  min-height: 530px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  padding: 0px 100px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.additionalclass {
+  margin: 50px 0px;
+}
+
+.logoimage {
+  aspect-ratio: 1/1;
+  width: 80px;
+  height: 80px;
+  margin-top: 10px;
+}
+
+.sideimage {
+  object-fit: cover;
+  height: 500px;
+  width: 500px;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+  .logoimage {
+    aspect-ratio: 1/1;
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
   }
-  to {
-    transform: rotate(360deg);
+  .sideimage {
+    object-fit: cover;
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
   }
 }
