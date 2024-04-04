@@ -11,6 +11,7 @@ import { skillrefresh } from "../Redux/Slice/KeySkillsAddition";
 import { useNavigate } from "react-router-dom";
 import CheckIcon from "@mui/icons-material/Check";
 import { visibilityChange } from "../Redux/Slice/PreviewVisibility";
+import { handleImageSave } from "../Redux/Slice/ImageSave";
 
 // style object for styling  the modal component.
 const style = {
@@ -48,6 +49,7 @@ export default function BasicModal() {
     navigate("/", { preventScrollReset: true });
     dispatch(handleModal(false));
     dispatch(visibilityChange(false));
+    dispatch(handleImageSave(""));
   };
 
   return (
