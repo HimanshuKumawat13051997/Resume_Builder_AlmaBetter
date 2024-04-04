@@ -61,4 +61,4 @@ Special thanks to AlmaBetter for making me proficient in making such project.
 ## Notes
 
 Live Link
-<a href='https://resume-builder-almabetter-e9514qxdl.vercel.app/'>ClickME</a>
+<a href='https://resume-builder-almabetter-gold.vercel.app/'>ClickME</a>
