@@ -1,6 +1,5 @@
 import { Avatar, Button, Grid, TextField, Typography } from "@mui/material";
 import { styled } from "@mui/system";
-import { useEffect, useState } from "react";
 
 const VisuallyHiddenInput = styled("input")({
   clip: "rect(0 0 0 0)",

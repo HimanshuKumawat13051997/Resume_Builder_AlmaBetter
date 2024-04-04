@@ -1,7 +1,7 @@
 import { Button, Divider, Grid, TextField, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { skillsaddition, skillsdel } from "../Redux/Slice/KeySkillsAddition";
 

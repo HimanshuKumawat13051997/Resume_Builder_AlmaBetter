@@ -1,5 +1,4 @@
 import "../App.css";
-
 import { Avatar, Box, Grid, Paper, Typography } from "@mui/material";
 
 export function Template_2({ props }) {

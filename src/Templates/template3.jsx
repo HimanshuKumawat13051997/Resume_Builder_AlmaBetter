@@ -1,6 +1,5 @@
 import "../App.css";
-import { Avatar, Divider, Grid, List, Paper, Typography } from "@mui/material";
-import { useSelector } from "react-redux";
+import { Avatar, Divider, Grid, Paper, Typography } from "@mui/material";
 
 export function Template_3({ props }) {
   const datata = {

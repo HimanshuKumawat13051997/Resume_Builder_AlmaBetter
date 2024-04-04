@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom/extend-expect";
-import { cleanup, render, screen, fireEvent } from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import { createMemoryHistory } from "history";
 import { BrowserRouter } from "react-router-dom";
 import React from "react";

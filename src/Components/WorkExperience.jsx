@@ -1,7 +1,6 @@
 import { Button, Grid, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 import { Exp } from "./Exp";
-import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addition } from "../Redux/Slice/Expaddition";
 

@@ -1,5 +1,5 @@
 import "../App.css";
-import { Avatar, Divider, Grid, List, Paper, Typography } from "@mui/material";
+import { Avatar, Divider, Grid, Paper, Typography } from "@mui/material";
 
 export function Template_4({ props }) {
   const datata = {

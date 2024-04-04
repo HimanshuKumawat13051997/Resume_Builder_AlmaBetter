@@ -10,7 +10,7 @@ import {
 import { Link } from "react-router-dom";
 import { Template } from "../Utlis/Alltemplates";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { handleSelector } from "../Redux/Slice/IDselector";
 
 export function MainTemplate() {
